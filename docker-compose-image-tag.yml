@@ -26,6 +26,8 @@ x-superset-volumes:
   &superset-volumes # /app/pythonpath_docker will be appended to the PYTHONPATH in the final container
   - ./docker:/app/docker
   - superset_home:/app/superset_home
+  - ./customizations:/app/customizations:ro
+  - ./customizations/images:/app/superset/static/assets/customizations/images:ro
 
 services:
   redis:
